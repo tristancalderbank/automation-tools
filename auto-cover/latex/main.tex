@@ -1,0 +1,84 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\newcommand{\companyname}{COMPANY-NAME}
+\newcommand{\jobtitle}{JOB-TITLE}
+\newcommand{\field}{FIELD}
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{red}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+
+
+% personal data
+\name{Tristan}{Calderbank}
+\title{ECE}                               % optional, remove / comment the line if not wanted
+\address{5264 Earles St.}{V5R 3S1 Vancouver}{Canada}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[fixed]{+1~(604)~822~3022}                  % optional, remove / comment the line if not wanted
+\phone[fax]{+1~(604)~822~3449}                    % optional, remove / comment the line if not wanted
+\email{eng.coop@ubc.ca}                               % optional, remove / comment the line if not wanted
+\homepage{www.ubcengineeringcoop.com}                         % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       letter       ---------------------------------------------------------
+% recipient data
+\recipient{\companyname}{c/o UBC Engineering Co-op Office\\Re: \jobtitle}
+
+
+
+\date{\today}
+\opening{Dear Sir/Madam,}
+\closing{Sincerely,}
+\enclosure[Attached]{curriculum vit\ae{}, transcript}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+\makelettertitle
+
+%\setlength{\parskip}{0.75em}
+
+Although I am an electrical engineering student, I’ve grown to love software and spend a big chunk of my free time programming.  My experience developing embedded projects for a physics lab at school has given me experience in Python, C, SQL and other web related languages that would be a great fit for working with \field. I absolutely love learning new things and would not be afraid to dive in and work hard. 
+
+My favourite project I’ve worked on was an indoor weather station/web server I built while volunteering as a research assistant at an optics lab at school. The project, written mainly in Python, involved gathering and storing ambient sensor data using a Raspberry Pi linux-based microcontroller. Additionally I have GUI experience as I learned enough HTML/Javascript/SQL to create a small website enabling anyone in the lab to view the short term and long term graphs of the ambient data.
+
+I love all technology and am able to adapt to just about any development environment. I use Linux with Bash for most stuff but own and use machines with all three major OSs. Furthermore I’ve used a whole bunch of different IDEs and have experience working on software with a team and managing version control using Github.
+
+Thank you for taking the time to read my application, I look forward to hearing from you in the future. To arrange an interview, please contact the Co-op Office at 604.822.6995 or coop.interviews@ubc.ca.
+
+\makeletterclosing
+
+\end{document}
+
+
+%% end of file `template.tex'.
