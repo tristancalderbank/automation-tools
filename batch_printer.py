@@ -152,7 +152,7 @@ class windows_api:
 
 
                                                            
-root_directory = ""
+root_directory = "C:\\Users\\sengl_000\\Desktop"
 pdf_crawler = crawler(root_directory)
 pdf_crawler.crawl()
 file_list_object = file_list(pdf_crawler.master_file_list)
@@ -190,18 +190,20 @@ while True:
 
     printy = printer()
 
-    windows = windows_api()
+    #windows = windows_api()
 
     #printy.print_all(matching_file_paths)
 
+    for item in matching_file_paths:
+        printy.print_file(item, 1)
 
     
 
 
-    print "Opening..."
-    for patho in matching_file_paths:
-        time.sleep(1)
-        windows.open_file(patho)
+    #print "Opening..."
+    #for patho in matching_file_paths:
+    #    time.sleep(1)
+    #    windows.open_file(patho)
                                               
                                                 
 
