@@ -80,68 +80,6 @@ class file_list:
 
 
 
-class printer:
-
-    def __init__(self):
-        pass
-
-    def print_file(self, path, copies):
-        filename = path
-        for copy in range(copies):
-            
-            win32api.ShellExecute (
-              0,
-              "print",
-              filename,
-              None,
-              ".",
-              0
-            )
-            time.sleep(10)
-
-    def print_file_gs(self, path, copies):
-
-        p = subprocess.Popen(["C:\Program Files\Ghostgum\gsview\gsprint.exe", "-landscape", "-copies", str(copies), path], 
-                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        stdout, stderr = p.communicate()
-        print stdout
-        print stderr
-
-    def get_list_with_copies(self, input_list):
-                                                                       
-        output_list = []
-
-        i = 0
-                                                    
-        while i < len(input_list):
-            
-            copies = 1
-            count = 1
-
-            while i != (len(input_list) - 1) and input_list[i] == input_list[i + 1]:
-                copies = copies + 1
-                i = i + 1
-
-            output_list.append([input_list[i], copies])
-            i = i + 1
-
-        return output_list
-
-    def print_all(self, file_list, copies):
-        copy_list = self.get_list_with_copies(file_list)
-
-        for file in copy_list:
-            file[1] = file[1] * copies
-
-        
-        number_of_files = len(copy_list)
-        current_copy = 1
-        for file in copy_list:
-            print "Printing file " + str(current_copy) + " out of " + str(number_of_files)
-            self.print_file_gs(file[0], file[1])
-            current_copy = current_copy + 1
-        
-        
 class windows_api:
 
     def __init__(self):
@@ -163,8 +101,7 @@ file_list_object = file_list(pdf_crawler.master_file_list)
 
 while True:
     input_files = []
-    print "Paste drawings to print: "
-    #print "Paste drawings to open: "
+    print "Paste drawings to open: "
 
     while True:
         line = raw_input()
@@ -189,27 +126,14 @@ while True:
     for item in matching_files_list:
         matching_file_paths.append(file_list_object.get_path(item))
 
-    #print matching_file_paths
 
-    printy = printer()
-
-    #windows = windows_api()
-
-    print "Enter number of copies: "
-    copies = int(raw_input())
-
-    printy.print_all(matching_file_paths, copies)
-
-    #for item in matching_file_paths:
-    #    printy.print_file(item, 1)
-
-    
+    windows = windows_api()
 
 
-    #print "Opening..."
-    #for patho in matching_file_paths:
-    #    time.sleep(1)
-    #    windows.open_file(patho)
+    print "Opening..."
+    for patho in matching_file_paths:
+        time.sleep(1)
+        windows.open_file(patho)
                                               
                                                 
 
